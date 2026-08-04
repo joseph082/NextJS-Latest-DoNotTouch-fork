@@ -8,6 +8,8 @@ frontend:
     build:
       commands:
         - npm run build
+        # Delete dev runtimes and source maps
+        - find node_modules/next/dist/compiled/next-server -type f -name '*.runtime.dev.js*' -delete
   artifacts:
     baseDirectory: .next
     files:
